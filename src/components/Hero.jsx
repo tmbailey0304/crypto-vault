@@ -33,7 +33,7 @@ const Hero = () => {
             <img
               src={`https://coinicons-api.vercel.app/api/icon/${crypto.symbol.toLowerCase()}`}
               alt=""
-              className="w-20"
+              className="w-20 hover:scale-110 duration-300"
             />
             <h1 className="flex flex-row gap-2 font-semibold">
               {crypto.symbol}

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useCoinContext } from "./CryptoContext";
 
+import { ImSpinner2 } from "react-icons/im";
+
 const MarketUpdate = () => {
   const { coins } = useCoinContext();
   const [page, setPage] = useState(1);
@@ -9,28 +11,37 @@ const MarketUpdate = () => {
   const totalPages = Math.ceil(coins.length / 15);
 
   return (
-    <div className="text-white bg-black p-4 md:px-40">
-      <h1 className="text-center text-2xl font-bold mb-4">Market Update</h1>
+    <div className="text-white bg-black p-4 md:px-20 lg:px-40 pt-40">
+      <h1 className="text-5xl md:text-6xl font-bold mb-8">Market Update</h1>
       <div className="w-full mx-auto">
-        <table className="w-full overflow-x-auto">
+        <table className="w-full overflow-x-auto sm:text-lg">
           <thead>
-            <tr className="text-left">
-              <th className="px-3 py-2">Coin</th>
+            <tr className="text-left bg-gradient-to-r from-blue-600 to-pink-600 md:text-xl h-16 ">
+              <th className="px-3 py-2 rounded-tl-md">Coin</th>
               <th className="px-3 py-2 text-right">Price</th>
-              <th className="px-3 py-2 text-right">24 Hour Change</th>
-              <th className="px-3 py-2 text-right hidden md:table-cell">
+              <th className="px-3 py-2 text-right rounded-tr-md md:rounded-none">
+                24 Hour Change
+              </th>
+              <th className="px-3 py-2 text-right hidden md:table-cell rounded-tr-md">
                 Market Cap
               </th>
             </tr>
           </thead>
           <tbody>
+            {coins.length === 0 ? (
+              <ImSpinner2 className="animate-spin flex" size={50}></ImSpinner2>
+            ) : (
+              ""
+            )}
             {firstFifteen.map((crypto) => (
-              <tr key={crypto.id} className="border-t">
-                <td className="px-3 py-2 flex flex-row items-center">
+              <tr
+                key={crypto.id}
+                className="border-b hover:bg-slate-800 duration-200"
+              >
+                <td className="md:px-3 py-6 flex flex-row items-center text-xl font-semibold">
                   <img
-                    className="mr-2"
+                    className="mr-2 w-10 md:w-14"
                     src={`https://coinicons-api.vercel.app/api/icon/${crypto.symbol.toLowerCase()}`}
-                    width={30}
                   ></img>
                   {crypto.name}
                 </td>
