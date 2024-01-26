@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { useCoinContext } from "./CryptoContext";
 
 const Hero = () => {

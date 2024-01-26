@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { useCoinContext } from "./CryptoContext";
 
 import { ImSpinner2 } from "react-icons/im";
@@ -75,7 +75,7 @@ const MarketUpdate = () => {
               key={index}
               onClick={() => setPage(index + 1)}
               className={`px-4 py-2 mx-1 ${
-                page === index + 1 ? "bg-gray-700" : "bg-gray-200"
+                page === index + 1 ? "bg-gray-700" : "bg-gray-200 text-black"
               } rounded`}
             >
               {index + 1}
