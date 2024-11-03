@@ -30,7 +30,9 @@ const Hero = () => {
             key={crypto.id}
           >
             <img
-              src={`https://coinicons-api.vercel.app/api/icon/${crypto.symbol.toLowerCase()}`}
+              src={`https://cryptocurrencyliveprices.com/img/${crypto.symbol.toLowerCase()}-${crypto.name
+                .toLowerCase()
+                .replace(" ", "-")}.png`}
               alt=""
               className="w-20 hover:scale-110 duration-300"
             />

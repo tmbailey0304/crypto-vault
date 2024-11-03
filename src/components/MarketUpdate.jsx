@@ -41,7 +41,9 @@ const MarketUpdate = () => {
                 <td className="md:px-3 py-6 flex flex-row items-center text-xl font-semibold">
                   <img
                     className="mr-2 w-10 md:w-14"
-                    src={`https://coinicons-api.vercel.app/api/icon/${crypto.symbol.toLowerCase()}`}
+                    src={`https://cryptocurrencyliveprices.com/img/${crypto.symbol.toLowerCase()}-${crypto.name
+                      .toLowerCase()
+                      .replace(" ", "-")}.png`}
                   ></img>
                   {crypto.name}
                 </td>
